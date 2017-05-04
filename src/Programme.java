@@ -9,7 +9,7 @@ public class Programme {
 		Personne Phil = new Personne("Phil","Corry",57);
 		Personne Toto = new Personne();
 		Refugie Azimov = new Refugie();
-		
+		Politique Zorro = new Politique();
 		Toto.setName("Bibi");
 		Toto.setFirstName("Fricotin");
 		Toto.setAge(99);
@@ -47,6 +47,9 @@ public class Programme {
 		System.out.println(Phil);
 		System.out.println(Toto);
 		System.out.println(Azimov);
+		
+		Zorro.setFirstName("Diego");
+		Zorro.Politique("Politique");
 	}
 
 }
