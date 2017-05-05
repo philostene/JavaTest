@@ -4,10 +4,7 @@ public class Personne {
 	private  int age ;
     private  String prenom;
     private  String nom;
-    private  String numVoie;
-    private  String nomVoie;
-    private  int codePostal;
-    private String ville;
+    Adresse adresse;
     
 	public Personne(){
 		//this.nom = "";
@@ -19,15 +16,22 @@ public class Personne {
 		// TODO Auto-generated constructor stub
 		super();
 		this.nom = nom;
-		this.prenom = prenom;
-		
-	}
+		this.prenom = prenom;	}
 
 	public Personne(String nom, String prenom, int age) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.age = age;	
+		this.age = age;			}
+	
+	public void adressePers(String numeroDeVoie, String nomDeVoie, int codePostal, String ville) {
+	    
+		if (this.adresse == null)  
+		{adresse = new Adresse();
+		this.adresse.demenager(numeroDeVoie, nomDeVoie, codePostal, ville);}
+		else {this.adresse.demenager(numeroDeVoie, nomDeVoie, codePostal, ville);}
+		
 	}
+	
 	
 	public  void setName(String newNom){
 		if (this.nom == null) this.nom= newNom;	}
@@ -39,18 +43,6 @@ public class Personne {
 	public void setAge(int newAge){
 		this.age= newAge; }
 	
-	public void setnumVoie(String newNumVoie){
-		this.numVoie= newNumVoie; }
-	
-	public void setnomVoie(String newNomVoie){
-		this.nomVoie= newNomVoie; }
-	
-	public void setcodePostal(int newCodePostal){
-		this.codePostal= newCodePostal; }
-	
-	public void setville(String newVille){
-		this.ville= newVille; }
-	
 	public String getName(){
 		return nom;	}
 	
@@ -59,28 +51,6 @@ public class Personne {
 	
 	public int getAge(){
 		return age;	}
-	
-	public String getnumVoie(){
-		return numVoie; }
-	
-	public String getnomVoie(){
-		return nomVoie; }
-	
-	public int getcodePostal(){
-		return codePostal; }
-	
-	public String getville(){
-		return ville; }
-	
-	boolean demenager(String numeroDeVoie, String nomDeVoie, int codePostal, String ville)
-	{
-		setnumVoie(numeroDeVoie);
-		setnomVoie(nomDeVoie);
-		setcodePostal(codePostal);
-		setville(ville);
-		
-		return true ;
-	}
 	
 	
 	/* (non-Javadoc)
